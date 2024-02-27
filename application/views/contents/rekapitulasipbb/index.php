@@ -48,7 +48,7 @@
                                 }
                                 ?>
                             <td style="text-align: center;">
-                                <?= $d->presentase ?> %
+                                <?= number_format($d->presentase, 2) ?> %
                             </td>
 
                         </tr>

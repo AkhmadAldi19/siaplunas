@@ -103,7 +103,7 @@ EOD;
         <p align="left">Petugas</p>
         <br>
         <p align="left">____________________</p>
-        <p align="left">{$d->nama} </p>
+        <p align="left">{$d->nama_petugas}</p>
         
     </div>
  EOD;

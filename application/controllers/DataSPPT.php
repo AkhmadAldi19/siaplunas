@@ -79,6 +79,9 @@ class DataSPPT extends CI_Controller {
         $this->form_validation->set_rules('alamat_op', 'Alamat Objek Pajak', 'required');
         $this->form_validation->set_rules('alamat_wp', 'Alamat Wajib Pajak', 'required');
         $this->form_validation->set_rules('ket', 'Keterangan', 'required');
+        $this->form_validation->set_rules('nomor_hp', 'Nomor HP', 'required|numeric');
+        $this->form_validation->set_rules('nama_petugas', 'Nama Petugas', 'required');
+        
         if ($this->form_validation->run() == TRUE)
         {
             $data = array(
@@ -89,7 +92,10 @@ class DataSPPT extends CI_Controller {
                 'pajak'=>$this->input->post('pajak'),
                 'alamat_op'=>$this->input->post('alamat_op'),
                 'alamat_wp'=>$this->input->post('alamat_wp'),
+                'nomor_hp'=>$this->input->post('nomor_hp'),
+                'nama_petugas'=>$this->input->post('nama_petugas'),
                 'ket'=>'Belum Bayar'
+
             );
 
             
@@ -124,7 +130,10 @@ class DataSPPT extends CI_Controller {
         $this->form_validation->set_rules('pajak', 'Jumlah Pajak', 'required|numeric');
         $this->form_validation->set_rules('alamat_op', 'Alamat Objek Pajak', 'required');
         $this->form_validation->set_rules('alamat_wp', 'Alamat Wajib Pajak', 'required');
+        $this->form_validation->set_rules('nomor_hp', 'Nomor HP', 'required|numeric');
         $this->form_validation->set_rules('ket', 'Keterangan', 'required');
+        $this->form_validation->set_rules('nama_petugas', 'Nama Petugas', 'required');
+        
         if ($this->form_validation->run() == TRUE)
         {
             $data = array(
@@ -135,7 +144,9 @@ class DataSPPT extends CI_Controller {
                 'bangunan'=>$this->input->post('bangunan'),
                 'pajak'=>$this->input->post('pajak'),
                 'alamat_op'=>$this->input->post('alamat_op'),
-                'alamat_wp'=>$this->input->post('alamat_wp')
+                'alamat_wp'=>$this->input->post('alamat_wp'),
+                'nomor_hp'=>$this->input->post('nomor_hp'),
+                'nama_petugas'=>$this->input->post('nama_petugas'),
             );
 
             

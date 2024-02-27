@@ -56,15 +56,12 @@
                                                     <i class="zmdi zmdi-card"></i>
                                                 </div>
                                                 <div class="text">
-                                                    <span class="desc" style="font-weight: 600; color: #fff; font-size: 22px ;">Lunas <?= isset($d->jumlah_nop) ? $d->jumlah_nop : 'N/A' ?></span>
+                                                    <span class="desc" style="font-weight: 600; color: #fff; font-size: 22px ;">Lunas <?= isset($d->jumlah_nop) ? $d->lunas : 'N/A' ?></span>
                                                     <h3 class="number" style="font-size: 16px; font-weight: 400; color: #fff;"> PBB =
-                                                        <?php
-                                                        if ($d->pajak_terhutang !== null) {
-                                                            echo $rupiah($d->pajak_terhutang);
-                                                        } else {
-                                                            echo 'N/A';
-                                                        }
-                                                        ?>
+                                                    <?php if (isset($d->pajak_lunas)) {
+                                                        echo $rupiah($d->pajak_lunas);
+                                                    }
+                                                    ?>
                                                     </h3>
                                                 </div>
 
@@ -93,7 +90,7 @@
                                                     <i class="zmdi zmdi-balance-wallet"></i>
                                                 </div>
                                                 <div class="text">
-                                                    <span class="desc" style="font-size: 22px; font-weight: 600; color: #fff;">PBB Terhutang</span>
+                                                    <span class="desc" style="font-size: 22px; font-weight: 600; color: #fff;">PBB Terhutang <?= isset($d->jumlah_nop) ? $d->terhutang : 'N/A' ?></span>
                                                     <h3 class="number" style="font-size: 16px; font-weight: 400; color: #fff;">
                                                         <?php
                                                         if ($d->pajak_terhutang !== null) {
@@ -132,13 +129,7 @@
                                                 <div class="text">
                                                     <span class="desc" style="font-size: 22px; font-weight: 600; color: #fff;">Presentase Lunas</span>
                                                     <h3 class="number" style="font-size: 16px; font-weight: 400; color: #fff;">
-                                                        <?php
-                                                        if ($d->pajak_terhutang !== null) {
-                                                            echo $rupiah($d->pajak_terhutang);
-                                                        } else {
-                                                            echo 'N/A';
-                                                        }
-                                                        ?>
+                                                    <?= number_format($d->presentase, 0) ?> %
                                                     </h3>
                                                 </div>
 
@@ -178,7 +169,7 @@
                                         <div class="col-md-6 col-lg-3">
                                             <div class="statistic__item statistic__item--orange">
                                                 <?php if ($d->jumlah_nop !== null) : ?>
-                                                    <h2 class="number" style="font-weight: 500; color: #fff; font-size: 28px ;"><?= $d->jumlah_nop ?></h2>
+                                                    <h2 class="number" style="font-weight: 500; color: #fff; font-size: 28px ;"><?= $d->terhutang ?></h2>
                                                 <?php endif; ?>
                                                 <span class="desc" style="font-weight: 600; color: #fff; font-size: 18px ;">WP Belum Bayar</span>
                                                 <div class="icon">
@@ -190,7 +181,7 @@
                                         <div class="col-md-6 col-lg-3">
                                             <div class="statistic__item statistic__item--blue">
                                                 <?php if ($d->jumlah_nop !== null) : ?>
-                                                    <h2 class="number" style="font-weight: 500; color: #fff; font-size: 28px ;"><?= $d->jumlah_nop ?></h2>
+                                                    <h2 class="number" style="font-weight: 500; color: #fff; font-size: 28px ;"><?= $d->lunas ?></h2>
                                                 <?php endif; ?>
                                                 <span class="desc" style="font-weight: 600; color: #fff; font-size: 18px ;">WP Lunas</span>
                                                 <div class="icon">
@@ -202,8 +193,9 @@
                                         <div class="col-md-6 col-lg-3">
                                             <div class="statistic__item statistic__item--red">
                                                 <?php if ($d->jumlah_nop !== null) : ?>
-                                                    <h2 class="number" style="font-weight: 500; color: #fff; font-size: 28px ;"><?= $d->jumlah_nop ?></h2>
+                                                    <h2 class="number" style="font-weight: 500; color: #fff; font-size: 28px ;"><?= number_format($d->presentase, 0) ?> %
                                                 <?php endif; ?>
+                                                <br>
                                                 <span class="desc" style="font-weight: 600; color: #fff; font-size: 18px ;">PBB Masuk</span>
                                                 <div class="icon">
                                                     <i class="zmdi zmdi-account-o"></i>

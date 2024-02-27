@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="header-wrap2">
                 <div class="logo d-block d-lg-none">
-                    <a href="#">
+                    <a href="<?= base_url() ?>dashboard">
                         <img src="<?= site_url() ?>assets/images/admin.png" alt="Admin PBB Desa Pucangsari" width="140px" height="auto" style="margin-right: 15px; margin-top: 10px; margin-bottom: 10px;" />
                     </a>
                 </div>
@@ -57,10 +57,9 @@
         <nav class="navbar-sidebar2">
             <ul class="list-unstyled navbar__list">
                 <li class="active has-sub">
-                    <a class="js-arrow" href="<?= base_url() ?>welcome">
+                    <a class="js-arrow" href="<?= base_url() ?>dashboard">
                         <i class="fas fa-tachometer-alt"></i>Dashboard
                     </a>
-
                 </li>
                 <!-- Terima Pembayaran -->
                 <li>

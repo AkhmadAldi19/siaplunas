@@ -18,7 +18,7 @@
         <div class="container-fluid">
             <ul class="navbar-mobile__list list-unstyled">
                 <li>
-                    <a class="js-arrow" href="<?= base_url() ?>welcome">
+                    <a class="js-arrow" href="<?= base_url() ?>dashboard">
                         <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                 </li>
                 <li>

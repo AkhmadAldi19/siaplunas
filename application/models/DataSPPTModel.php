@@ -26,6 +26,10 @@ class DataSPPTModel extends CI_Model{
         return $this->db->get_where('data_pbb', array('id' => $id));
     }
 
+    // public function insertData($data){
+    //     $this->db->insert('data_pbb', $data);
+    // }
+
     public function insertData($data){
         $this->db->insert('data_pbb', $data);
     }
